@@ -1,13 +1,194 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
-    </head>
-    <body>
-        <h1>Hello World! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
-    </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vinit Agrharkar – Portfolio</title>
+  <link rel="stylesheet" href="css/main.scss" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Sticky Navbar -->
+  <nav class="nav" aria-label="Primary">
+    <div class="container">
+      <strong class="logo">Hello, Visitor!</strong>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#portfolio" class="nav-link">Projects</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="home" class="stripe hero">
+    <video autoplay muted loop playsinline class="bg-video">
+    <source src="assets/home-bg.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+    </video>
+    <div class="container">
+      <img src="assets/my-photo.jpg" alt="Vinit Agrharkar" width="140" height="140" />
+      <h1>I’m Vinit Agrharkar</h1>
+      <p>Master’s in Information Management @ UIUC · Aspiring Data Engineer</p>
+    </div>
+  </header>
+  
+<!-- Projects (Carousel) -->
+<section id="portfolio" class="stripe section">
+  <div class="container">
+    <h2>Projects</h2>
+
+    <div class="carousel">
+      <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
+
+      <div class="carousel-track">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+          <h3>Predictive Spending & Credit Line Optimization – Synchrony Datathon</h3>
+          <ul>
+            <li>Achieved R² of 0.9985 for Q4 spend prediction using Gradient Boosting Regressor.</li>
+            <li>Identified 2,788 high-risk accounts with 100% precision using SMOTE + XGBoost Classifier.</li>
+            <li>Delivered personalized credit line recommendations with MAE of $3.38 per customer.</li>
+          </ul>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+          <h3>Manufacturing Sensor Data Analysis Using Azure Databricks</h3>
+          <ul>
+            <li>Built real-time predictive maintenance pipeline with PySpark + SQL Server on Databricks.</li>
+            <li>Reduced failure detection time by 40% and improved efficiency by 30%.</li>
+            <li>Developed Power BI dashboards and automated ETL pipelines via Azure Data Factory.</li>
+          </ul>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+          <h3>Invoice Data Extraction Optimization – Paramatrix Technologies</h3>
+          <ul>
+            <li>Used OCR (Tesseract + Pytesseract) to extract data from 1,000+ invoices with 92% accuracy.</li>
+            <li>Automated invoice extraction, processing 500+ invoices/hour and reducing time by 40%.</li>
+          </ul>
+        </div>
+      </div>
+
+      <button class="carousel-btn next" aria-label="Next">&#10095;</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- About Section with Modals -->
+<section id="about" class="stripe section alt">
+  <div class="container">
+    <h2>About Me</h2>
+    <div class="about-grid">
+      <!-- Education Card -->
+      <div class="about-card" data-modal="modal-education">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Education</h3>
+        <p>UIUC · SPIT Mumbai</p>
+      </div>
+
+      <!-- Work Experience Card -->
+      <div class="about-card" data-modal="modal-work">
+        <i class="fas fa-briefcase"></i>
+        <h3>Work Experience</h3>
+        <p>Cognizant · HDFC Bank · Paramatrix</p>
+      </div>
+
+      <!-- Skills Card -->
+      <div class="about-card" data-modal="modal-skills">
+        <i class="fas fa-code"></i>
+        <h3>Skills</h3>
+        <p>Python · SQL · Cloud · ML</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Education Modal -->
+<div id="modal-education" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Education</h3>
+    <p><strong>University of Illinois Urbana-Champaign (2024–Present)</strong><br>
+       Master’s in Information Management, GPA: 3.89/4<br>
+       Relevant coursework: Data Science, Data Warehousing, Programming in Analytics</p>
+    <p><strong>Sardar Patel Institute of Technology, Mumbai (2017–2021)</strong><br>
+       B.Tech in Electronics and Telecommunications, GPA: 3.86/4</p>
+  </div>
+</div>
+
+<!-- Work Modal -->
+<div id="modal-work" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Work Experience</h3>
+    <ul>
+      <li><strong>Cognizant Technology Services</strong> – Programmer Analyst (2022–2024)<br>
+          Led SAP Process Integration team, built Tableau dashboards, reduced error resolution time by 30%.</li>
+      <li><strong>HDFC Bank</strong> – Business Analyst Intern (2023)<br>
+          Built Power BI dashboards analyzing 12 months of transaction data, automated data extraction.</li>
+      <li><strong>Paramatrix Technologies</strong> – Data Science Intern (2021)<br>
+          Built OCR-based invoice extraction system with 92% accuracy, processing 500+ invoices/hour.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Skills Modal -->
+<div id="modal-skills" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Skills</h3>
+    <p><strong>Programming:</strong> Python, SQL, C++, R<br>
+       <strong>Cloud:</strong> AWS, Azure Databricks, Docker<br>
+       <strong>Machine Learning:</strong> Scikit-learn, TensorFlow, PyTorch, XGBoost, NLP<br>
+       <strong>Visualization:</strong> Tableau, Power BI, Looker<br>
+       <strong>Certified:</strong> AWS Cloud Practitioner, Codecademy Analytics Professional</p>
+  </div>
+</div>
+
+<!-- Contact -->
+  <section id="contact" class="stripe section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <div class="contact-grid">
+
+         <!-- Email -->
+        <a href="mailto:vka5@illinois.edu" class="contact-item">
+          <div class="icon"><i class="fas fa-envelope"></i></div>
+          <h3>Email</h3>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="http://www.linkedin.com/in/vinit-agrharkar" target="_blank" class="contact-item">
+          <div class="icon"><i class="fab fa-linkedin"></i></div>
+          <h3>LinkedIn</h3>
+        </a>
+
+         <!-- Instagram -->
+        <a href="https://www.instagram.com/vinit1420/" target="_blank" class="contact-item">
+          <div class="icon"><i class="fab fa-instagram"></i></div>
+          <h3>Instagram</h3>
+        </a>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="stripe">
+    <div class="container">
+      <div>© <span id="year"></span> Vinit Agrharkar · <a href="#home">Back to top</a></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
