@@ -525,6 +525,38 @@ img, video {
   margin: 1rem;
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); // small slide up
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply fade-in to hero text */
+.hero .container h1,
+.hero .container p,
+.hero .container img {
+  opacity: 0;                 // start invisible
+  animation: fadeIn 1.2s ease forwards;
+}
+
+/* Add delay for staggered effect */
+.hero .container img {
+  animation-delay: 0.2s;
+}
+
+.hero .container h1 {
+  animation-delay: 0.5s;
+}
+
+.hero .container p {
+  animation-delay: 0.8s;
+}
+
 
 #home {
   scroll-margin-top: 70px;
