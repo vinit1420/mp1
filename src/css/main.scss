@@ -232,12 +232,53 @@ section.section {
 /* ------------------------------
    Projects Section (with bg image + carousel)
 ------------------------------ */
+/* Project Section Heading */
+#portfolio h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  color: #fff;                 /* bright text */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* glow/shadow for contrast */
+}
+
+/* Project Card (Transparent) */
+.project-card {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.50);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.4);
+  }
+
+  h3 {
+    color: #0f172a; /* darker ink for readability */
+    margin-top: 0;
+  }
+
+  li {
+    color: #1e293b;
+  }
+}
+
 #portfolio {
   position: relative;
-  background: url("https://images.unsplash.com/photo-1531256379416-9f000e90aacc?q=80&w=1074&auto=format&fit=crop")
+  width: 100vw;
+  min-height: 50vh;
+
+  background: url("https://images.pexels.com/photos/3184464/pexels-photo-3184464.jpeg")
               no-repeat center center fixed;
   background-size: cover;
-  min-height: 50vh;
 
   .container {
     position: relative;
@@ -249,7 +290,7 @@ section.section {
   position: relative;
   overflow: hidden;
   margin-top: 2rem;
-  padding: 0 60px;
+  padding: 0 0; /* remove left/right padding so arrows don't shift content */
 }
 
 .carousel-track {
@@ -258,37 +299,15 @@ section.section {
 }
 
 .carousel-slide {
-  min-width: 100%;
-  flex-shrink: 0;
-  padding: 2rem;
+  min-width: 100%;            /* slide takes full width */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: center;    /* center content */
   align-items: center;
-  text-align: left;
-
-  /* 3D card look */
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-  }
+  padding: 2rem;
+  box-sizing: border-box;
 }
 
-.carousel h3 {
-  margin-top: 0;
-  color: var(--ink);
-}
-
-.carousel p,
-.carousel li {
-  color: var(--ink-muted);
-}
-
+/* Arrows float OVER the slide, not beside it */
 .carousel-btn {
   position: absolute;
   top: 50%;
@@ -307,8 +326,13 @@ section.section {
   }
 }
 
-.carousel-btn.prev { left: -5px; }
-.carousel-btn.next { right: 50px; }
+.carousel-btn.prev {
+  left: 20px;   /* float over left side */
+}
+
+.carousel-btn.next {
+  right: 20px;  /* float over right side */
+}
 
 /* ------------------------------
    About Section (cards + modals)
